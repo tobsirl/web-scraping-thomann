@@ -7,12 +7,19 @@ const puppeteer = require('puppeteer');
   await page.goto(url);
   // await page.screenshot({ path: 'example.png' });
 
-  const textContent = await page.evaluate(() =>
-    Array.from(document.querySelectorAll('.title-block')).map(item =>
-      item.innerText.trim()
+  const guitarNames = await page.evaluate(() =>
+    Array.from(document.querySelectorAll('.title-block')).map(guitar =>
+      guitar.innerText.trim()
     )
   );
-  console.log(textContent);
+
+  const guitarPrice = await page.evaluate(() =>
+    Array.from(document.querySelectorAll('.price-block')).map(price =>
+      price.innerText.trim()
+    )
+  );
+  console.log(guitarNames);
+  console.log(guitarPrice);
 
   await browser.close();
 })();
