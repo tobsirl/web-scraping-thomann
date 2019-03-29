@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/tobsirl/web-scraping-thomann/issues"
   },
-  "homepage": "https://github.com/tobsirl/web-scraping-thomann#readme"
+  "homepage": "https://github.com/tobsirl/web-scraping-thomann#readme",
+  "dependencies": {
+    "puppeteer": "^1.14.0"
+  }
 }
