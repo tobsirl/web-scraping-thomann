@@ -18,12 +18,13 @@ const puppeteer = require('puppeteer');
   //     price.innerText.trim()
   //   )
   // );
-
+  //title, price and image are scraped from the website and put in an object 
   const guitarInfo = await page.evaluate(() =>
     Array.from(document.querySelectorAll('.extensible-article')).map(
       content => ({
         title: content.querySelector('.title-block').textContent,
-        price: content.querySelector('.price-block').textContent
+        price: content.querySelector('.price-block').textContent,
+        image: content.querySelector('.product-image img').src
       })
     )
   );
